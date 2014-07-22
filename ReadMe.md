@@ -1,5 +1,4 @@
 # CsP Private API
-=============
 
 ## Acerca de...
 
