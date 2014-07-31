@@ -1,0 +1,56 @@
+<?php
+
+namespace CSP\GenericoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Empleados
+ *
+ * @ORM\Table(name="empleados")
+ * @ORM\Entity
+ */
+class Empleados
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nombre", type="string", length=50, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Apellido", type="string", length=50, nullable=false)
+     */
+    private $apellido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Direccion", type="string", length=70, nullable=false)
+     */
+    private $direccion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Email", type="string", length=45, nullable=false)
+     */
+    private $email;
+
+    public function __toString()
+    {
+        return $this->nombre." ". $this->apellido;
+    }
+}

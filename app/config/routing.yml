@@ -1,0 +1,108 @@
+api_categorias:
+    host:     "api.{domain}"
+    type:     rest
+    resource: "@CSPApiBundle/Controller/CategoriasRESTController.php"
+    prefix: /api
+    defaults:
+        domain: "%domain%"
+    requirements:
+        domain: "%domain%"
+        
+api_productos:
+    host:     "api.{domain}"
+    type:     rest
+    resource: "@CSPApiBundle/Controller/ProductosRESTController.php"
+    prefix: /api
+    defaults:
+        domain: "%domain%"
+    requirements:
+        domain: "%domain%"
+        
+api_proveedores:
+    host:     "api.{domain}"
+    type:     rest
+    resource: "@CSPApiBundle/Controller/ProveedoresRESTController.php"
+    prefix: /api
+    defaults:
+        domain: "%domain%"
+    requirements:
+        domain: "%domain%"
+
+api_empleados:
+    host:     "api.{domain}"
+    type:     rest
+    resource: "@CSPApiBundle/Controller/EmpleadosRESTController.php"
+    prefix: /api
+    defaults:
+        domain: "%domain%"
+    requirements:
+        domain: "%domain%"
+        
+api_clientes:
+    host:     "api.{domain}"
+    type:     rest
+    resource: "@CSPApiBundle/Controller/ClientesRESTController.php"
+    prefix: /api
+    defaults:
+        domain: "%domain%"
+    requirements:
+        domain: "%domain%"
+
+csp_generico:
+    host:     "www.{domain}"
+    resource: "@CSPGenericoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+    defaults:
+        domain: "%domain%"
+    requirements:
+        domain: "%domain%"
+
+csp_base:
+    host:     "www.{domain}"
+    resource: "@CSPBaseBundle/Controller/"
+    type:     annotation
+    prefix:   /
+    defaults:
+        domain: "%domain%"
+    requirements:
+        domain: "%domain%"
+    
+csp_api:
+    host:     "api.{domain}"
+    resource: "@CSPApiBundle/Controller/"
+    type:     annotation
+    prefix:   /
+    defaults:
+        domain: "%domain%"
+    requirements:
+        domain: "%domain%"
+
+fos_oauth_server_token:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+fos_oauth_server_authorize:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

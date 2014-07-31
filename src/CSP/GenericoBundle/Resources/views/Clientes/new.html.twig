@@ -1,0 +1,59 @@
+{% extends 'CSPBaseBundle::base.html.twig' %}
+
+{% block title %}
+{{ parent() }} - {{ 'views.new.creation'|trans({'%entity%': 'Clientes'}, 'MWSimpleCrudGeneratorBundle') }}
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block carousel %}
+{% endblock %}
+{% block carousel1 %}
+{% endblock %}
+{% block carousel2 %}
+{% endblock %}
+{% block carousel3 %}
+{% endblock %}
+
+{% block tripleta1 %}
+{% endblock %}
+{% block tripleta2 %}
+{% endblock %}
+{% block tripleta3 %}
+{% endblock %}
+
+{% block featurettes1 %}
+{% endblock %}
+{% block featurettes2 %}
+{% endblock %}
+{% block featurettes3 %}
+{% endblock %}
+
+{% block page %}
+    {% form_theme form 'MWSimpleCrudGeneratorBundle:widget:fields.html.twig' %}
+    <div class="panel panel-default center-block">
+        <div class="panel-heading">
+            <h3 class="panel-title center-block">
+                {{ 'views.new.creation'|trans({'%entity%': 'Clientes'}, 'MWSimpleCrudGeneratorBundle') }}
+            </h3>
+        </div>
+            
+        <div class="panel-body">
+            {{ form(form) }}
+        </div>
+    </div>
+
+<div class="col-lg-9">
+    <div class="float-left col-lg-3">
+        <a class="btn btn-info col-lg-11" href="{{ path('clientes') }}">
+            {{ 'views.recordactions.backtothelist'|trans({}, 'MWSimpleCrudGeneratorBundle') }}
+        </a>
+    </div>
+</div>
+{% endblock %}
+    
+{% block javascript %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/mwsimplecrudgenerator/js/widget.js') }}"></script>
+{% endblock %}

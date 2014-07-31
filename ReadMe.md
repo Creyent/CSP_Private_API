@@ -9,4 +9,5 @@ Proyecto API RESTful
 * Servicio Web vía REST
 * En desarrollo...
 
-by Creyent
+## Author
+Creyent - creyent@gmail.com
