@@ -1,0 +1,309 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+body {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    body { padding-top: 100px; }
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media (min-width: 768px) {
+
+  /* Remove the edge padding needed for mobile */
+  .marketing {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left:  15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left:  0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxWrapper {max-width:none;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;}
+.cboxIframe{width:100%; height:100%; display:block; border:0; padding:0; margin:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:#000;}
+#colorbox{outline:0;}
+    #cboxContent{margin-top:20px;background:#000;}
+        .cboxIframe{background:#fff;}
+        #cboxError{padding:50px; border:1px solid #ccc;}
+        #cboxLoadedContent{border:5px solid #000; background:#fff;}
+        #cboxTitle{position:absolute; top:-20px; left:0; color:#ccc;}
+        #cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;}
+        #cboxLoadingGraphic{background:url(images/loading.gif) no-repeat center center;}
+
+        /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+        #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
+        
+        /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+        #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
+        
+        #cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
+        #cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url(images/controls.png) no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
+        #cboxPrevious:hover{background-position:bottom left;}
+        #cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url(images/controls.png) no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
+        #cboxNext:hover{background-position:bottom right;}
+        #cboxClose{position:absolute; top:5px; right:5px; display:block; background:url(images/controls.png) no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
+        #cboxClose:hover{background-position:bottom center;}
+
+@CHARSET "ISO-8859-1";
+
+.bootstrap-checkbox > button.btn{
+	padding:7px 0 4px 2px;
+	width:28px;
+}
+.bootstrap-checkbox > button.btn.displayAsButton{
+	width:auto;
+}
+.bootstrap-checkbox > button.btn.displayAsButton > span.label-checkbox{
+	padding:0 8px 0 4px;
+}
+.bootstrap-checkbox > button.btn.displayAsButton > span.icon{
+	margin: 2px 4px;
+}
+.bootstrap-checkbox > button.btn.displayAsButton > span.label-prepend-checkbox{
+	padding:0 4px 0 8px;
+}
+.bootstrap-checkbox > button.btn.btn-large{
+	padding:10px 0 6px 2px;
+	width:36px;
+}
+.bootstrap-checkbox > button.btn.btn-small{
+	padding:5px 0 3px 1px;
+	width:24px;
+}
+.bootstrap-checkbox > button.btn.btn-mini{
+	padding:4px 0 1px 1px;
+	width:20px;
+}
+
+.bootstrap-checkbox > .btn.btn-link{
+ 	text-decoration:none;
+}
+
+label.bootstrap-checkbox.disabled{
+	cursor:default;
+	color:#666;
+}
+
+.bootstrap-checkbox > .label-prepend-checkbox{
+	padding-right:4px;
+}
+
+.bootstrap-checkbox > .label-checkbox{
+	padding-left:4px;
+}
+
+.bootstrap-checkbox.disabled > [class^="label-"],
+.bootstrap-checkbox > .btn[disabled]{
+	cursor:not-allowed;
+}
+
+[class^="cb-icon-"],
+[class*=" cb-icon-"] {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-top: 1px;
+	*margin-right: .3em;
+	line-height: 14px;
+	vertical-align: text-top;
+	background-image: url("../img/icons.png");
+	background-position: 14px 14px;
+	background-repeat: no-repeat;
+}
+
+.bootstrap-checkbox button.btn > span.cb-icon-check,
+.bootstrap-checkbox.disabled button.btn:hover > span.cb-icon-check,
+.bootstrap-checkbox.disabled button.btn:active > span.cb-icon-check{
+	background-position: 0 -1px;
+}
+.bootstrap-checkbox button.btn:hover > span.cb-icon-check,
+.bootstrap-checkbox button.btn:focus > span.cb-icon-check,
+.bootstrap-checkbox button.btn:active > span.cb-icon-check{
+	background-position: 0 -25px;
+}
+.bootstrap-checkbox button.btn > span.cb-icon-check-empty,
+.bootstrap-checkbox.disabled button.btn:hover > span.cb-icon-check-empty,
+.bootstrap-checkbox.disabled button.btn:active > span.cb-icon-check-empty{
+	background-position: -24px -1px;
+}
+.bootstrap-checkbox button.btn:hover > span.cb-icon-check-empty,
+.bootstrap-checkbox button.btn:focus > span.cb-icon-check-empty,
+.bootstrap-checkbox button.btn:active > span.cb-icon-check-empty{
+	background-position: -24px -25px;
+}
+
+.bootstrap-checkbox button.btn > span.cb-icon-check-indeterminate,
+.bootstrap-checkbox.disabled button.btn:hover > span.cb-icon-check-indeterminate,
+.bootstrap-checkbox.disabled button.btn:active > span.cb-icon-check-indeterminate{
+	background-position: -48px -1px;
+}
+.bootstrap-checkbox button.btn:hover > span.cb-icon-check-indeterminate,
+.bootstrap-checkbox button.btn:focus > span.cb-icon-check-indeterminate,
+.bootstrap-checkbox button.btn:active > span.cb-icon-check-indeterminate{
+	background-position: -48px -25px;
+}
+
+.filters-right {
+    float: right;
+}
+.likepaginator {
+    margin: 18px 0;
+    float: right;
+}
+.float-left {
+    float: left;
+    margin: 5px;
+}
+.form-errors {
+    padding: 5px;
+}
+.form-errors > ul {
+    list-style: none;
+}
+form.well ul li {
+    border-radius: 3px 3px 3px 3px;
+    padding: 1px 4px 2px;
+    color: #FFFFFF;
+    background-color: #B94A48;
+}

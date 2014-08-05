@@ -8,6 +8,7 @@ use CSP\GenericoBundle\Form\CategoriasType;
 use FOS\RestBundle\Controller\Annotations\QueryParam;
 use FOS\RestBundle\Controller\Annotations\RouteResource;
 use FOS\RestBundle\Controller\Annotations\View;
+use FOS\RestBundle\Controller\Annotations;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\View as FOSView;
@@ -24,7 +25,6 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
  * Categorias controller.
  * @RouteResource("Categorias")
  * 
- * @ApiDoc()
  */
 class CategoriasRESTController extends VoryxController
 {
@@ -35,7 +35,15 @@ class CategoriasRESTController extends VoryxController
      *
      * @return Response
      *
-     * @ApiDoc()
+     * @ApiDoc(
+     *   resource = true,
+     *   description = "Obtiene la Categoria con el ID indicado.",
+     *   output = "CSP\GenericoBundle\Entity\Categorias",
+     *   statusCodes = {
+     *     200 = "Respuesta cuando es satisfactorio.",
+     *     404 = "Respuesta cuando no se encuentra el recurso."
+     *   }
+     * )
      */
     public function getAction(Categorias $entity)
     {
@@ -55,7 +63,15 @@ class CategoriasRESTController extends VoryxController
      * @QueryParam(name="order_by", nullable=true, array=true, description="Order by fields. Must be an array ie. &order_by[name]=ASC&order_by[description]=DESC")
      * @QueryParam(name="filters", nullable=true, array=true, description="Filter by fields. Must be an array ie. &filters[id]=3")
      * 
-     * @ApiDoc()
+     * @ApiDoc(
+     *   resource = true,
+     *   description = "Obtiene la colección de categorias.",
+     *   output = "CSP\GenericoBundle\Entity\Categorias",
+     *   statusCodes = {
+     *     200 = "Respuesta cuando es satisfactorio.",
+     *     404 = "Respuesta cuando no se encuentran recursos."
+     *   }
+     * )
      */
     public function cgetAction(ParamFetcherInterface $paramFetcher)
     {
@@ -86,8 +102,14 @@ class CategoriasRESTController extends VoryxController
      * @return Response
      *
      * @ApiDoc(
-     *  input="CSP\GenericoBundle\Form\CategoriasType",
-     *  output="CSP\GenericoBundle\Entity\Categorias"
+     *   resource = true,
+     *   description = "Creates a new page from the submitted data.",
+     *   input="CSP\GenericoBundle\Form\CategoriasType",
+     *   output="CSP\GenericoBundle\Entity\Categorias",
+     *   statusCodes = {
+     *     200 = "Respuesta cuando es satisfactorio.",
+     *     400 = "Respuesta cuando el formulario tiene errores."
+     *   }
      * )
      */
     public function postAction(Request $request)
@@ -117,7 +139,15 @@ class CategoriasRESTController extends VoryxController
      *
      * @return Response
      * 
-     * @ApiDoc()
+     * @ApiDoc(
+     *   resource = true,
+     *   input = "CSP\GenericoBundle\Form\CategoriasType",
+     *   statusCodes = {
+     *     201 = "Respuesta cuando el recurso es creado.",
+     *     204 = "Respuesta cuando es satisfactorio.",
+     *     400 = "Respuesta cuando el formulario tiene errores."
+     *   }
+     * )
      */
     public function putAction(Request $request, Categorias $entity)
     {
@@ -148,7 +178,15 @@ class CategoriasRESTController extends VoryxController
      *
      * @return Response
      * 
-     * @ApiDoc()
+     * @ApiDoc(
+     *   resource = true,
+     *   input = "CSP\GenericoBundle\Form\CategoriasType",
+     *   statusCodes = {
+     *     201 = "Respuesta cuando el recurso es creado.",
+     *     204 = "Respuesta cuando es satisfactorio.",
+     *     400 = "Respuesta cuando el formulario tiene errores."
+     *   }
+     * )
     */
     public function patchAction(Request $request, Categorias $entity)
     {
@@ -165,8 +203,11 @@ class CategoriasRESTController extends VoryxController
      *
      * @return Response
      * 
-     * @ApiDoc()
-     */
+     * @ApiDoc(
+     *   resource = true,
+     *   input = "CSP\GenericoBundle\Form\CategoriasType"
+     * )
+    */
     public function deleteAction(Request $request, Categorias $entity)
     {
         try {
@@ -178,5 +219,25 @@ class CategoriasRESTController extends VoryxController
         } catch (\Exception $e) {
             return FOSView::create($e->getMessage(), Codes::HTTP_INTERNAL_SERVER_ERROR);
         }
+    }
+    
+    /**
+    * Presents the form to use to create a new resource.
+    *
+    * @ApiDoc(
+    *   resource = true,
+    *   input = "CSP\GenericoBundle\Form\CategoriasType"
+    * )
+    *
+    * @Annotations\View(
+    *  template = "CSPApiBundle:Categorias:new.html.twig",
+    *  templateVar = "form"
+    * )
+    *
+    * @return FormTypeInterface
+    */
+    public function newCategoriasAction()
+    {
+        return $this->createForm(new CategoriasType());
     }
 }

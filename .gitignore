@@ -1,8 +1,8 @@
 
-web/*
+#web/*
 
 # Bootstrap
-app/bootstrap*
+#app/bootstrap*
 
 # Symfony directories
 vendor/*
@@ -12,9 +12,9 @@ web/uploads/*
 web/bundles/*
 
 # Configuration files
-app/config/parameters.ini
-app/config/parameters.yml
-app/config/parameters.yml.dist
+#app/config/parameters.ini
+#app/config/parameters.yml
+#app/config/parameters.yml.dist
 
 # Project files
 cliente/*

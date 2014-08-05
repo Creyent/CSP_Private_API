@@ -46,7 +46,7 @@ security:
         - { path: ^/productos, role: [ROLE_ADMIN, ROLE_USER] }
         - { path: ^/proveedores, role: [ROLE_ADMIN, ROLE_USER] }
         - { path: ^/clientes, role: [ROLE_ADMIN, ROLE_USER] }
-        - { path: ^/categorias, role: [ROLE_ADMIN] }
+        - { path: ^/categorias, role: [IS_AUTHENTICATED_ANONYMOUSLY] }
         - { path: ^/empleados, role: [ROLE_ADMIN] }
 
         - { path: ^/api, roles: [ IS_AUTHENTICATED_ANONYMOUSLY ] }
