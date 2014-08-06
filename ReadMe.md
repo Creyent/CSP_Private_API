@@ -1,13 +1,12 @@
 # CsP Private API
 
 ## Acerca de...
-
-Proyecto API RESTful
+Proyecto API RESTful en Symfony2
 
 ## Información
-
-* Servicio Web vía REST
-* En desarrollo...
+* Proyecto base de productos genéricos.
+* Web service via REST.
+* Cliente API en desarrollo...
 
 ## Author
 Creyent - creyent@gmail.com
