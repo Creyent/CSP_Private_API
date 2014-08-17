@@ -2,6 +2,7 @@
 parameters:
     database_driver: pdo_mysql
     database_host: 127.0.0.1
+    #database_host: 192.168.1.39
     database_port: null
     database_name: csp_db-base
     database_user: root
@@ -11,5 +12,5 @@ parameters:
     mailer_user: null
     mailer_password: null
     locale: es
-    secret: parangaricutirimicuaro
+    secret: NotASecretToken!!-2014-CSP.!
     domain: csp.dev

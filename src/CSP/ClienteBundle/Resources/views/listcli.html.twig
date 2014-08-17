@@ -1,0 +1,27 @@
+<script type="text/ng-template" id="listcli.html">
+    <input type="text" ng-model="search" class="search-query" placeholder="Buscar">
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>NIT</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th><a href="#/newcli"><i class="glyphicon glyphicon-plus tooltips"></i></a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="project in projects | filter:search | orderBy:'nombre'" ng-show="project.id">
+                <td>{[{project.nombre}]}</td>
+                <td>{[{project.apellido}]}</td>
+                <td>{[{project.nit}]}</td>
+                <td>{[{project.direccion}]}</td>
+                <td>{[{project.telefono}]}</td>
+                <td>
+                    <a href="#/editcli/{[{project.id}]}"><i class="glyphicon glyphicon-pencil tooltips"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</script>

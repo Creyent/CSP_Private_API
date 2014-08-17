@@ -18,6 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use Voryx\RESTGeneratorBundle\Controller\VoryxController;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 /**
  * Clientes controller.
@@ -32,6 +33,15 @@ class ClientesRESTController extends VoryxController
      *
      * @return Response
      *
+     * @ApiDoc(
+     *   resource = true,
+     *   description = "Obtiene el Cliente con el ID indicado.",
+     *   output = "CSP\GenericoBundle\Entity\Clientes",
+     *   statusCodes = {
+     *     200 = "Respuesta cuando es satisfactorio.",
+     *     404 = "Respuesta cuando no se encuentra el recurso."
+     *   }
+     * )
      */
     public function getAction(Clientes $entity)
     {
@@ -50,6 +60,16 @@ class ClientesRESTController extends VoryxController
      * @QueryParam(name="limit", requirements="\d+", default="20", description="How many notes to return.")
      * @QueryParam(name="order_by", nullable=true, array=true, description="Order by fields. Must be an array ie. &order_by[name]=ASC&order_by[description]=DESC")
      * @QueryParam(name="filters", nullable=true, array=true, description="Filter by fields. Must be an array ie. &filters[id]=3")
+     * 
+     * @ApiDoc(
+     *   resource = true,
+     *   description = "Obtiene la colección de Clientes.",
+     *   output = "CSP\GenericoBundle\Entity\Clientes",
+     *   statusCodes = {
+     *     200 = "Respuesta cuando es satisfactorio.",
+     *     404 = "Respuesta cuando no se encuentran recursos."
+     *   }
+     * )
      */
     public function cgetAction(ParamFetcherInterface $paramFetcher)
     {
@@ -79,6 +99,16 @@ class ClientesRESTController extends VoryxController
      *
      * @return Response
      *
+     * @ApiDoc(
+     *   resource = true,
+     *   description = "Crea un nuevo Cliente con los datos enviados.",
+     *   input="CSP\GenericoBundle\Form\ClientesType",
+     *   output="CSP\GenericoBundle\Entity\Clientes",
+     *   statusCodes = {
+     *     200 = "Respuesta cuando es satisfactorio.",
+     *     400 = "Respuesta cuando el formulario tiene errores."
+     *   }
+     * )
      */
     public function postAction(Request $request)
     {
@@ -106,6 +136,17 @@ class ClientesRESTController extends VoryxController
      * @param $entity
      *
      * @return Response
+     * 
+     * @ApiDoc(
+     *   resource = true,
+     *   description = "Actualiza el Cliente indicadp con los datos enviados.",
+     *   input = "CSP\GenericoBundle\Form\ClientesType",
+     *   statusCodes = {
+     *     201 = "Respuesta cuando el recurso es creado.",
+     *     204 = "Respuesta cuando es satisfactorio.",
+     *     400 = "Respuesta cuando el formulario tiene errores."
+     *   }
+     * )
      */
     public function putAction(Request $request, Clientes $entity)
     {
@@ -135,6 +176,17 @@ class ClientesRESTController extends VoryxController
      * @param $entity
      *
      * @return Response
+     * 
+     * @ApiDoc(
+     *   resource = true,
+     *   description = "Actualiza parte del Cliente indicado con los datos enviados.",
+     *   input = "CSP\GenericoBundle\Form\ClientesType",
+     *   statusCodes = {
+     *     201 = "Respuesta cuando el recurso es creado.",
+     *     204 = "Respuesta cuando es satisfactorio.",
+     *     400 = "Respuesta cuando el formulario tiene errores."
+     *   }
+     * )
 */
     public function patchAction(Request $request, Clientes $entity)
     {
@@ -150,6 +202,12 @@ class ClientesRESTController extends VoryxController
      * @internal param $id
      *
      * @return Response
+     * 
+     * @ApiDoc(
+     *   resource = true,
+     *   description = "Borra el Cliente con el ID indicado.",
+     *   input = "CSP\GenericoBundle\Form\ClientesType"
+     * )
      */
     public function deleteAction(Request $request, Clientes $entity)
     {

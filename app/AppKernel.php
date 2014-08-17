@@ -37,6 +37,7 @@ class AppKernel extends Kernel
             
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            new CSP\ClienteBundle\CSPClienteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

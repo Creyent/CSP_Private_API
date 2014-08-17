@@ -1,0 +1,146 @@
+{% extends 'CSPBaseBundle::base.html.twig' %}
+
+{% block title %}Cliente API{% endblock %}
+
+{% block stylesheets %}
+    {{parent()}}
+{% endblock %}
+
+{% block navbar %}
+<span class="hidden-xs">
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{{ path('home') }}">CSP</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    {{ knp_menu_render('CSPBaseBundle:Builder:sideMenu', { 'style': 'navbar-right' }) }}
+                    <div class="navbar-text">
+                        <a href="#/empleados" class="navbar-link"><i class="glyphicon glyphicon-tower tooltips"></i> Empleados</a>
+                        <a href="#/proveedores" class="navbar-link"><i class="glyphicon glyphicon-barcode tooltips"></i> Provedores</a>
+                        <a href="#/clientes" class="navbar-link"><i class="glyphicon glyphicon-book tooltips"></i> Clientes</a>
+                        <a href="#/categorias" class="navbar-link"><i class="glyphicon glyphicon-refresh tooltips"></i> Categorías</a>
+                        <a href="#/productos" class="navbar-link"><i class="glyphicon glyphicon-thumbs-up tooltips"></i> Productos</a>
+                    </div>
+                {% else %}
+                    <a class="hidden-xs navbar-text navbar-link navbar-right" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        Iniciar sesión
+                    </a>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</span>
+                
+<span class="visible-xs">
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+          <div class="container">
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                {{ knp_menu_render('CSPBaseBundle:Builder:sideMenu', { 'style': 'navbar-right' }) }}
+            {% else %}
+                <a class="hidden-xs navbar-text navbar-link navbar-right" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    Iniciar sesión
+                </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+</span>
+{% endblock %}
+
+{% block menu %}
+    <span class="visible-xs">
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Menú <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#/empleados" class="navbar-btn"><i class="glyphicon glyphicon-tower tooltips"></i> Empleados</a></li>
+            <li><a href="#/proveedores" class="navbar-btn"><i class="glyphicon glyphicon-barcode tooltips"></i> Provedores</a></li>
+            <li><a href="#/clientes" class="navbar-btn"><i class="glyphicon glyphicon-book tooltips"></i> Clientes</a></li>
+            <li><a href="#/categorias" class="navbar-btn"><i class="glyphicon glyphicon-refresh tooltips"></i> Categorías</a></li>
+            <li><a href="#/productos" class="navbar-btn"><i class="glyphicon glyphicon-thumbs-up tooltips"></i> Productos</a></li>
+        </ul>
+    </div>
+    </span>
+{% endblock %}
+
+{% block carousel %}
+{% endblock %}
+{% block carousel1 %}
+{% endblock %}
+{% block carousel2 %}
+{% endblock %}
+{% block carousel3 %}
+{% endblock %}
+
+{% block tripleta1 %}
+{% endblock %}
+{% block tripleta2 %}
+{% endblock %}
+{% block tripleta3 %}
+{% endblock %}
+
+{% block featurettes1 %}
+{% endblock %}
+{% block featurettes2 %}
+{% endblock %}
+{% block featurettes3 %}
+{% endblock %}
+
+{% block jumbotron %}
+{% endblock %}
+
+{% block page %}
+    <h3>Servicio REST</h3>
+    <div>
+        <div ng-app="project">
+        <div ng-view></div>
+        {% include 'CSPClienteBundle::listcat.html.twig' %}
+        {% include 'CSPClienteBundle::detailcat.html.twig' %}
+        
+        {% include 'CSPClienteBundle::listcli.html.twig' %}
+        {% include 'CSPClienteBundle::detailcli.html.twig' %}
+        
+        {% include 'CSPClienteBundle::listprod.html.twig' %}
+        {% include 'CSPClienteBundle::detailprod.html.twig' %}
+        
+        {% include 'CSPClienteBundle::listprov.html.twig' %}
+        {% include 'CSPClienteBundle::detailprov.html.twig' %}
+        
+        {% include 'CSPClienteBundle::listemp.html.twig' %}
+        {% include 'CSPClienteBundle::detailemp.html.twig' %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    {% javascripts
+        '@CSPClienteBundle/Resources/public/js/angular1.3.0b18.min.js'
+        '@CSPClienteBundle/Resources/public/js/ui-bootstrap-tpls-0.11.0.min.js'
+        '@CSPClienteBundle/Resources/public/js/hello.all.min.js'
+        '@CSPClienteBundle/Resources/public/js/app.js'
+        '@CSPClienteBundle/Resources/public/js/restangular.min.js'
+        '@CSPClienteBundle/Resources/public/js/angular-route.js'
+        '@CSPClienteBundle/Resources/public/js/underscore-min.js'
+        output="js/client.js"
+    %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    {% endjavascripts %}
+{% endblock %}

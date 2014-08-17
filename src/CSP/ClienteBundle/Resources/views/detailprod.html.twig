@@ -1,0 +1,45 @@
+<script type="text/ng-template" id="detailprod.html">
+    <form class="form-horizontal" role="form" name="myForm">
+        <div class="control-group" ng-class="{error: myForm.codigo.$invalid}">
+            <label class="control-label">Código</label>
+            <input class="form-control" type="text" name="codigo" ng-model="project.codigo" required>
+            <span ng-show="myForm.codigo.$error.required" class="text-danger">Requerido</span>
+        </div>
+        
+        <div class="control-group" ng-class="{error: myForm.nombre.$invalid}">
+            <label class="control-label">Nombre</label>
+            <input class="form-control" type="text" name="nombre" ng-model="project.nombre" required>
+            <span ng-show="myForm.nombre.$error.required" class="text-danger">Requerido</span>
+        </div>
+
+        <div class="control-group" ng-class="{error: myForm.costo.$invalid}">
+            <label class="control-label">Costo</label>
+            <input class="form-control" type="number" name="costo" ng-model="project.costo" required>
+            <span ng-show="myForm.costo.$error.number" class="text-danger">Requerido</span>
+        </div>
+
+        <div class="control-group" ng-class="{error: myForm.precio.$invalid}">
+            <label class="control-label">Precio</label>
+            <input class="form-control" type="number" name="precio" ng-model="project.precio" required>
+            <span ng-show="myForm.precio.$error.number" class="text-danger">Requerido</span>
+        </div>
+
+        <div class="control-group" ng-class="{error: myForm.existencias.$invalid}">
+            <label class="control-label">Existencias</label>
+            <input class="form-control" type="number" name="existencias" ng-model="project.existencias" required>
+            <span ng-show="myForm.existencias.$error.number" class="text-danger">Requerido</span>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Categoría</label>
+            <input class="form-control" type="text" name="idcategoria" ng-model="project.idcategoria.id">
+        </div>
+        
+        <br>
+        <a href="#/productos" class="btn btn-warning">Cancelar</a>
+        <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid"
+                class="btn btn-primary">Guardar</button>
+        <button ng-click="destroy()"
+                ng-show="project.id" class="btn btn-danger">Borrar</button>
+    </form>
+</script>

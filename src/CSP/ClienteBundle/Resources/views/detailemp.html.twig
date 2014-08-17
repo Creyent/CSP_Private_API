@@ -1,0 +1,33 @@
+<script type="text/ng-template" id="detailemp.html">
+    <form class="form-horizontal" role="form" name="myForm">
+        <div class="control-group" ng-class="{error: myForm.nombre.$invalid}">
+            <label class="control-label">Nombre</label>
+            <input class="form-control" type="text" name="nombre" ng-model="project.nombre" required placeholder="Ingrese nombre.">
+            <span ng-show="myForm.nombre.$error.required" class="text-danger">Requerido</span>
+        </div>
+
+        <div class="control-group" ng-class="{error: myForm.apellido.$invalid}">
+            <label class="control-label">Apellido</label>
+            <input class="form-control" type="text" name="apellido" ng-model="project.apellido" required placeholder="Ingrese apellido.">
+            <span ng-show="myForm.apellido.$error.required" class="text-danger">Requerido</span>
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label">Dirección</label>
+            <input class="form-control" type="text" name="direccion" ng-model="project.direccion" placeholder="Ingrese dirección.">
+        </div>
+        
+        <div class="control-group" ng-class="{error: myForm.email.$invalid}">
+            <label class="control-label">Email</label>
+            <input class="form-control" type="email" name="email" ng-model="project.email" placeholder="Ingrese dirección de correo.">
+            <span ng-show="myForm.email.$error.email" class="text-danger">Dirección de correo no válida</span>
+        </div>
+      
+        <br>
+        <a href="#/empleados" class="btn btn-warning">Cancelar</a>
+        <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid"
+                class="btn btn-primary">Guardar</button>
+        <button ng-click="destroy()"
+                ng-show="project.id" class="btn btn-danger">Borrar</button>
+    </form>
+</script>

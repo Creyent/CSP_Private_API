@@ -1,82 +1,47 @@
 api_categorias:
-    host:     "api.{domain}"
     type:     rest
     resource: "@CSPApiBundle/Controller/CategoriasRESTController.php"
     prefix: /api
-    defaults:
-        domain: "%domain%"
-    requirements:
-        domain: "%domain%"
         
 api_productos:
-    host:     "api.{domain}"
     type:     rest
     resource: "@CSPApiBundle/Controller/ProductosRESTController.php"
     prefix: /api
-    defaults:
-        domain: "%domain%"
-    requirements:
-        domain: "%domain%"
         
 api_proveedores:
-    host:     "api.{domain}"
     type:     rest
     resource: "@CSPApiBundle/Controller/ProveedoresRESTController.php"
     prefix: /api
-    defaults:
-        domain: "%domain%"
-    requirements:
-        domain: "%domain%"
 
 api_empleados:
-    host:     "api.{domain}"
     type:     rest
     resource: "@CSPApiBundle/Controller/EmpleadosRESTController.php"
     prefix: /api
-    defaults:
-        domain: "%domain%"
-    requirements:
-        domain: "%domain%"
         
 api_clientes:
-    host:     "api.{domain}"
     type:     rest
     resource: "@CSPApiBundle/Controller/ClientesRESTController.php"
     prefix: /api
-    defaults:
-        domain: "%domain%"
-    requirements:
-        domain: "%domain%"
-
-csp_generico:
-    host:     "www.{domain}"
-    resource: "@CSPGenericoBundle/Controller/"
-    type:     annotation
-    prefix:   /
-    defaults:
-        domain: "%domain%"
-    requirements:
-        domain: "%domain%"
 
 csp_base:
-    host:     "www.{domain}"
     resource: "@CSPBaseBundle/Controller/"
     type:     annotation
     prefix:   /
-    defaults:
-        domain: "%domain%"
-    requirements:
-        domain: "%domain%"
+
+csp_generico:
+    resource: "@CSPGenericoBundle/Controller/"
+    type:     annotation
+    prefix:   /
     
 csp_api:
-    host:     "api.{domain}"
     resource: "@CSPApiBundle/Controller/"
     type:     annotation
     prefix:   /
-    defaults:
-        domain: "%domain%"
-    requirements:
-        domain: "%domain%"
+    
+csp_cliente:
+    resource: "@CSPClienteBundle/Controller/"
+    type:     annotation
+    prefix:   /
 
 fos_oauth_server_token:
     resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"

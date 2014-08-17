@@ -1,0 +1,25 @@
+<script type="text/ng-template" id="listemp.html">
+    <input type="text" ng-model="search" class="search-query" placeholder="Buscar">
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dirección</th>
+                <th>Email</th>
+                <th><a href="#/newemp"><i class="glyphicon glyphicon-plus tooltips"></i></a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="project in projects | filter:search | orderBy:'nombre'" ng-show="project.id">
+                <td>{[{project.nombre}]}</td>
+                <td>{[{project.apellido}]}</td>
+                <td>{[{project.direccion}]}</td>
+                <td>{[{project.email}]}</td>
+                <td>
+                    <a href="#/editemp/{[{project.id}]}"><i class="glyphicon glyphicon-pencil tooltips"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</script>

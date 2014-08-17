@@ -1,0 +1,21 @@
+<script type="text/ng-template" id="listcat.html">
+    <input type="text" ng-model="search" class="search-query" placeholder="Buscar">
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th><a href="#/newcat"><i class="glyphicon glyphicon-plus tooltips"></i></a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="project in projects | filter:search | orderBy:'nombre'" ng-show="project.id">
+                <td>{[{project.nombre}]}</td>
+                <td>{[{project.descripcion}]}</td>
+                <td>
+                    <a href="#/editcat/{[{project.id}]}"><i class="glyphicon glyphicon-pencil tooltips"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</script>

@@ -1,15 +1,12 @@
-
-#web/*
-
 # Bootstrap
 #app/bootstrap*
 
 # Symfony directories
-vendor/*
+#vendor/*
 */logs/*
 */cache/*
-web/uploads/*
-web/bundles/*
+#web/uploads/*
+#web/bundles/*
 
 # Configuration files
 #app/config/parameters.ini
@@ -17,7 +14,15 @@ web/bundles/*
 #app/config/parameters.yml.dist
 
 # Project files
-cliente/*
+cliente/ClienteAPI
+cliente/API Client/b*
+cliente/API Client/d*
+cliente/API Client/l*
+cliente/API Client/n*
+cliente/API Client/o*
+cliente/API Client/r*
+cliente/API Client/j*
+cliente/API Client/r*
 nbproject/*
 
 # Composer
@@ -60,3 +65,5 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+/cliente/API Client/CodeNameOneBuildClient.jar
+/cliente/API Client/JavaSE.jar

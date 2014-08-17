@@ -39,7 +39,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [CSPBaseBundle, CSPApiBundle]
+    bundles:        [CSPBaseBundle, CSPClienteBundle, CSPApiBundle]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -185,7 +185,7 @@ fos_rest:
         default_format: json
     param_fetcher_listener: true
     body_listener: true
-    #disable_csrf_role: ROLE_USER
+    disable_csrf_role: IS_AUTHENTICATED_ANONYMOUSLY
     body_converter:
         enabled: true
     view:

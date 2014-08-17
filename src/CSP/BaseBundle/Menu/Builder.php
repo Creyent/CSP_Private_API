@@ -12,6 +12,7 @@ class Builder extends ContainerAware
         $menu->setChildrenAttribute('class', 'nav pull');
         $menu->addChild('Acerca de', array('route' => 'about'));
         $menu->addChild('P. Base', array('route' => 'generico'));
+        $menu->addChild('API Client', array('route' => 'apiclient'));
         return $menu;
     }
     

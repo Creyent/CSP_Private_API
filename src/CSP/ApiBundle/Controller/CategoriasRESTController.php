@@ -65,7 +65,7 @@ class CategoriasRESTController extends VoryxController
      * 
      * @ApiDoc(
      *   resource = true,
-     *   description = "Obtiene la colección de categorias.",
+     *   description = "Obtiene la colección de Categorias.",
      *   output = "CSP\GenericoBundle\Entity\Categorias",
      *   statusCodes = {
      *     200 = "Respuesta cuando es satisfactorio.",
@@ -103,7 +103,7 @@ class CategoriasRESTController extends VoryxController
      *
      * @ApiDoc(
      *   resource = true,
-     *   description = "Creates a new page from the submitted data.",
+     *   description = "Crea una nueva categoria con los datos enviados.",
      *   input="CSP\GenericoBundle\Form\CategoriasType",
      *   output="CSP\GenericoBundle\Entity\Categorias",
      *   statusCodes = {
@@ -141,6 +141,7 @@ class CategoriasRESTController extends VoryxController
      * 
      * @ApiDoc(
      *   resource = true,
+     *   description = "Actualiza la categoria indicada con los datos enviados.",
      *   input = "CSP\GenericoBundle\Form\CategoriasType",
      *   statusCodes = {
      *     201 = "Respuesta cuando el recurso es creado.",
@@ -180,6 +181,7 @@ class CategoriasRESTController extends VoryxController
      * 
      * @ApiDoc(
      *   resource = true,
+     *   description = "Actualiza parte de la categoria indicada con los datos enviados.",
      *   input = "CSP\GenericoBundle\Form\CategoriasType",
      *   statusCodes = {
      *     201 = "Respuesta cuando el recurso es creado.",
@@ -205,6 +207,7 @@ class CategoriasRESTController extends VoryxController
      * 
      * @ApiDoc(
      *   resource = true,
+     *   description = "Borra la categoria con el ID indicado.",
      *   input = "CSP\GenericoBundle\Form\CategoriasType"
      * )
     */
@@ -219,25 +222,5 @@ class CategoriasRESTController extends VoryxController
         } catch (\Exception $e) {
             return FOSView::create($e->getMessage(), Codes::HTTP_INTERNAL_SERVER_ERROR);
         }
-    }
-    
-    /**
-    * Presents the form to use to create a new resource.
-    *
-    * @ApiDoc(
-    *   resource = true,
-    *   input = "CSP\GenericoBundle\Form\CategoriasType"
-    * )
-    *
-    * @Annotations\View(
-    *  template = "CSPApiBundle:Categorias:new.html.twig",
-    *  templateVar = "form"
-    * )
-    *
-    * @return FormTypeInterface
-    */
-    public function newCategoriasAction()
-    {
-        return $this->createForm(new CategoriasType());
     }
 }
