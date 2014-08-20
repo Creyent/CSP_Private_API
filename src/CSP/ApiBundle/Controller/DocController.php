@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DocController extends Controller {
 
     /**
-     * @Route("/docapi", name="docu_api")
+     * @Route("/doc", name="documentacion")
      * @Template()
      */
     public function docAction()

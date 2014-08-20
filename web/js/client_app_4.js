@@ -86,7 +86,7 @@ angular.module('project', ['restangular', 'ngRoute']).
       
       otherwise({redirectTo:'/'});
       
-      RestangularProvider.setBaseUrl('http://192.168.1.69/CSP_Private_API/web/api/');
+      RestangularProvider.setBaseUrl('http://creyentsproductions.com/api/');
       //RestangularProvider.setDefaultRequestParams({ access_token: 'NGI0OGNlODJjMmM2YjhkYjI5NWUyMzNjNTQ3ZWQyMDdmZjEzYWIyMzMwMmY2MTY1MDQwMTdjOTg2NGE4YTkxMg' })
       RestangularProvider.setRestangularFields({
         id: 'id'
