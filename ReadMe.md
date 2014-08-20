@@ -22,9 +22,5 @@ Enlaces
 ------------
 
 * [Sitio Oficial] (http://creyentsproductions.com)
-* Aplicación Android [API CLient](http://creyentsproductions.com/download/API_Client.apk)
-<<<<<<< HEAD
+* Aplicación Android [API Client](http://creyentsproductions.com/download/API_Client.apk)
 * Cliente [Frontend] (http://creyentsproductions.com/APIClient)
-=======
-* Cliente [Frontend] (http://creyentsproductions.com/APIClient)
->>>>>>> origin/master
