@@ -1,6 +1,6 @@
 # Documentacion de la API
 
-Esta documentación se puede encontrar en formato HTML [aquí] (http://creyentsproductions.com/docs/api/)
+Esta documentación se puede encontrar en formato HTML [aquí] (http://creyentsproductions.com/doc)
 y se puede descargar desde este mismo repositorio.
 
 ## /api/categorias ##
