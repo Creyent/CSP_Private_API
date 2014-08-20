@@ -14,5 +14,12 @@ Información
 * Frontend API Client via Web RESTful desarrollado en AngularJS.
 * API Client desarrollado en CodenameOne para Android.
 
-## Author
+Author
+------------
 Creyent - creyent@gmail.com
+
+Enlaces
+------------
+[Sitio Oficial] (http://creyentsproductions.com)
+Aplicación Android [API CLient](http://creyentsproductions.com/download/API_Client.apk)
+Cliente [Frontend] (http://creyentsproductions.com/APIClient)
