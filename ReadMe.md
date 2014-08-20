@@ -20,6 +20,7 @@ Creyent - creyent@gmail.com
 
 Enlaces
 ------------
-[Sitio Oficial] (http://creyentsproductions.com)
-Aplicación Android [API CLient](http://creyentsproductions.com/download/API_Client.apk)
-Cliente [Frontend] (http://creyentsproductions.com/APIClient)
+
+* [Sitio Oficial] (http://creyentsproductions.com)
+* Aplicación Android [API CLient](http://creyentsproductions.com/download/API_Client.apk)
+* Cliente [Frontend] (http://creyentsproductions.com/APIClient)
